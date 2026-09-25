@@ -40,6 +40,8 @@ export const authApi = {
     api.post<AuthResponse>('/auth/register', data),
   login: (data: { email: string; password: string }) => api.post<AuthResponse>('/auth/login', data),
   forgotPassword: (data: { email: string }) => api.post('/auth/forgot-password', data),
+  resetPassword: (data: { token: string; password: string }) =>
+    api.post('/auth/reset-password', data),
 };
 
 export const paymentsApi = {
