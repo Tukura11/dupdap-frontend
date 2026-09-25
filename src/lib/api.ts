@@ -39,6 +39,7 @@ export const authApi = {
   register: (data: { email: string; password: string; businessName: string; country?: string }) =>
     api.post<AuthResponse>('/auth/register', data),
   login: (data: { email: string; password: string }) => api.post<AuthResponse>('/auth/login', data),
+  forgotPassword: (data: { email: string }) => api.post('/auth/forgot-password', data),
 };
 
 export const paymentsApi = {
